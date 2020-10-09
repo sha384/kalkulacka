@@ -2,12 +2,92 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kalkulacka.MainPage">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+    <ContentPage.Resources>
+
+        <Style x:Key="whiteButton"
+         TargetType="Button">
+            <Setter Property="BackgroundColor"
+                    Value="#eee" />
+            <Setter Property="TextColor"
+                    Value="Black" />
+            <Setter Property="CornerRadius"
+                    Value="0" />
+            <Setter Property="FontSize"
+                    Value="40" />
+        </Style>
+        <Style x:Key="greyButton"
+               TargetType="Button">
+            <Setter Property="BackgroundColor"
+                    Value="#e3e3e3" />
+            <Setter Property="TextColor"
+                    Value="#0099ff" />
+            <Setter Property="CornerRadius"
+                    Value="0" />
+            <Setter Property="FontSize"
+                    Value="40" />
+        </Style>
+        <Style x:Key="blueButton"
+               TargetType="Button">
+            <Setter Property="BackgroundColor"
+                    Value="#0099ff" />
+            <Setter Property="TextColor"
+                    Value="White" />
+            <Setter Property="CornerRadius"
+                    Value="0" />
+            <Setter Property="FontSize"
+                    Value="40" />
+        </Style>
+        <Style x:Key="label"
+               TargetType="Label">
+            <Setter Property="BackgroundColor"
+                    Value="White" />
+            <Setter Property="TextColor"
+                    Value="Black" />
+            <Setter Property="FontSize"
+                    Value="40" />
+        </Style>
+
+    </ContentPage.Resources>
+    
+    <Grid RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
+            <RowDefinition Height="150" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="label" Grid.ColumnSpan="4" Text="" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Style="{StaticResource label}"/>
+
+        <Button Clicked="clear" Text="C" Grid.Column="0" Grid.Row="1" Style="{StaticResource greyButton}"/>
+        <Button Clicked="button_click" Text="÷" Grid.Column="1" Grid.Row="1" Style="{StaticResource greyButton}"/>
+        <Button Clicked="button_click" Text="×" Grid.Column="2" Grid.Row="1" Style="{StaticResource greyButton}"/>
+        <Button Clicked="delete" Text="←" Grid.Column="3" Grid.Row="1" Style="{StaticResource greyButton}"/>
+                         
+        <Button Clicked="button_click" Text="7" Grid.Column="0" Grid.Row="2" Style="{StaticResource whiteButton}"/>
+        <Button Clicked="button_click" Text="8" Grid.Column="1" Grid.Row="2" Style="{StaticResource whiteButton}"/>
+        <Button Clicked="button_click" Text="9" Grid.Column="2" Grid.Row="2" Style="{StaticResource whiteButton}"/>
+        <Button Clicked="button_click" Text="-" Grid.Column="3" Grid.Row="2" Style="{StaticResource greyButton}"/>
+                         
+        <Button Clicked="button_click" Text="4" Grid.Column="0" Grid.Row="3" Style="{StaticResource whiteButton}"/>
+        <Button Clicked="button_click" Text="5" Grid.Column="1" Grid.Row="3" Style="{StaticResource whiteButton}"/>
+        <Button Clicked="button_click" Text="6" Grid.Column="2" Grid.Row="3" Style="{StaticResource whiteButton}"/>
+        <Button Clicked="button_click" Text="+" Grid.Column="3" Grid.Row="3" Style="{StaticResource greyButton}"/>
+                
+        <Button Clicked="button_click" Text="1" Grid.Column="0" Grid.Row="4" Style="{StaticResource whiteButton}"/>
+        <Button Clicked="button_click" Text="2" Grid.Column="1" Grid.Row="4" Style="{StaticResource whiteButton}"/>
+        <Button Clicked="button_click" Text="3" Grid.Column="2" Grid.Row="4" Style="{StaticResource whiteButton}"/>
+        <Button Clicked="evaluate" Text="=" Grid.Column="3" Grid.Row="4" Style="{StaticResource blueButton}" Grid.RowSpan="2"/>
+
+        <Button Clicked="button_click" Text="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Style="{StaticResource whiteButton}"/>
+        <Button Clicked="button_click" Text="," Grid.Column="2" Grid.Row="5" Style="{StaticResource whiteButton}"/>
     </Grid>
 </ContentPage>
